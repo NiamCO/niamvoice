@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Room - VoiceChat.audio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="room-container">
+        <header class="room-header">
+            <div class="room-info">
+                <div class="logo">
+                    <i class="fas fa-wave-square"></i>
+                    <span>VoiceChat.audio</span>
+                </div>
+                <div class="room-code" id="roomCodeDisplay">--- --- ---</div>
+            </div>
+            <div class="room-actions">
+                <div class="status connected" id="connectionStatus">
+                    <i class="fas fa-circle"></i> Connected
+                </div>
+                <button id="copyLinkBtn" class="btn btn-secondary">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+                <button id="leaveRoomBtn" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i> Leave
+                </button>
+            </div>
+        </header>
 
+        <main class="room-main">
+            <div class="mic-circle" id="localMicCircle">
+                <i class="fas fa-microphone"></i>
+            </div>
+            
+            <div class="mic-status" id="micStatusText">
+                Your mic is ON
+            </div>
+            
+            <div class="participants">
+                <h3><i class="fas fa-users"></i> In this room (<span id="participantCount">1</span>/8)</h3>
+                <div class="participants-list" id="participantsList">
+                    <!-- Participants will be added by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="device-selector">
+                <label for="audioDeviceSelect">
+                    <i class="fas fa-headphones"></i> Audio Device
+                </label>
+                <select id="audioDeviceSelect">
+                    <option value="">Select microphone...</option>
+                </select>
+            </div>
+        </main>
+
+        <footer class="room-footer">
+            <button id="muteToggleBtn" class="mute-btn unmuted">
+                <i class="fas fa-microphone"></i>
+                <span>MUTE</span>
+            </button>
+            <p class="mute-hint">Click to mute/unmute yourself</p>
+        </footer>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 id="errorTitle">Connection Error</h3>
+            <p id="errorMessage">Unable to connect to the room. Please try again.</p>
+            <div class="modal-actions">
+                <button id="retryBtn" class="btn btn-primary">Retry</button>
+                <button id="goHomeBtn" class="btn btn-secondary">Go Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Link copied!</span>
+    </div>
+
+    <script src="room.js"></script>
+</body>
+</html>
