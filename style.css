@@ -1,1 +1,540 @@
+/* SIMPLE VOICE CHAT STYLES - NiamVoice */
 
+:root {
+    --primary: #3a86ff;
+    --primary-dark: #2667cc;
+    --danger: #ff006e;
+    --success: #38b000;
+    --bg: #f8f9fa;
+    --card: #ffffff;
+    --text: #212529;
+    --text-light: #6c757d;
+    --border: #dee2e6;
+    --radius: 12px;
+    --spacing: 16px;
+}
+
+[data-theme="dark"] {
+    --primary: #4d96ff;
+    --danger: #ff3385;
+    --success: #4cd964;
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f8f9fa;
+    --text-light: #adb5bd;
+    --border: #343a40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Homepage */
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.logo h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, var(--primary), #8338ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tagline {
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.hero {
+    margin: 40px 0;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.cta-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(58, 134, 255, 0.1);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    margin: 24px 0;
+    color: var(--text-light);
+    position: relative;
+}
+
+.divider:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+}
+
+.divider span {
+    background: var(--bg);
+    padding: 0 12px;
+    position: relative;
+}
+
+.join-input-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.join-input-group input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.join-input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.feature {
+    padding: 20px;
+    background: var(--card);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.footer {
+    margin-top: 40px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.theme-toggle {
+    margin-top: 12px;
+}
+
+/* Room Page */
+.room-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-header {
+    padding: var(--spacing);
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.room-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.room-code {
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background: var(--bg);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.room-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.status.connected {
+    color: var(--success);
+}
+
+.status.disconnected {
+    color: var(--danger);
+}
+
+.room-main {
+    flex: 1;
+    padding: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mic-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 8px solid var(--border);
+    transition: all 0.3s;
+}
+
+.mic-circle i {
+    font-size: 3rem;
+    color: var(--text-light);
+}
+
+.mic-circle.speaking {
+    border-color: var(--success);
+    background: rgba(56, 176, 0, 0.1);
+}
+
+.mic-circle.muted {
+    border-color: var(--danger);
+    background: rgba(255, 0, 110, 0.1);
+}
+
+.mic-status {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.participants {
+    width: 100%;
+    max-width: 400px;
+}
+
+.participants h3 {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.participants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.participant {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--card);
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+.participant.speaking {
+    border-color: var(--success);
+}
+
+.participant.you {
+    background: rgba(58, 134, 255, 0.1);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.participant-info {
+    flex: 1;
+}
+
+.participant-name {
+    font-weight: 500;
+}
+
+.participant-status {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.device-selector {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.device-selector select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    margin-top: 8px;
+}
+
+.room-footer {
+    padding: var(--spacing);
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.mute-btn {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.mute-btn.unmuted {
+    background: var(--danger);
+    color: white;
+}
+
+.mute-btn.muted {
+    background: var(--success);
+    color: white;
+}
+
+.mute-btn:hover {
+    transform: scale(1.05);
+}
+
+.mute-btn i {
+    font-size: 2.5rem;
+}
+
+.mute-hint {
+    margin-top: 12px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Modals & Loading */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--success);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .room-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .room-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .mic-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .mute-btn {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
